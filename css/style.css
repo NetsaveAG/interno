@@ -8,6 +8,10 @@ html, body {
     padding: 0;
     height: 100%;
     max-width: 1920px;
+    
+}
+body {
+    overflow-x: hidden;
 }
 .background {
     position: fixed;
@@ -37,7 +41,10 @@ html, body {
 }
 
 
-
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
 h1,h2,h3,h4,h5,h6{
     font-family: DM Serif Display;
     font-weight: 400;
@@ -226,22 +233,72 @@ h1{
 }
 .header{
     position: relative;
-    background-image: url('../img/background.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100%;
+    position: relative;
+    overflow: hidden;
 }
-.head_h2{
-    font-size: 85px;
-    line-height: 106.25px;
-    color: #292F36;
+
+.header_img1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-bottom-left-radius: 15%;
+}
+.header_img2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-bottom-right-radius: 15%;
 }
 .head_info{
     width: 600px;
     position: absolute;
     left: 18%;
     top: 30%;
+    z-index: 2;
+}
+.head_info_center{
+    text-align: center;
+    width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+.head_info_center p{
+    text-align: center;
+}
+.swiper-center img{
+    border-bottom-right-radius: 15%;
+}
+.head_info_right{
+    text-align: end;
+    width: 655px;
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    transform: translate(10%, -50%);
+    z-index: 2;
+}
+.head_info_right p{
+    text-align: end;
+}
+.swiper-scrollbar {
+    margin-bottom: 1%;
+    width: 70% !important;
+    left: 15% !important;
+    height: 1vh !important;
+}
+.head_h2{
+    font-size: 85px;
+    line-height: 106.25px;
+    color: #292F36;
 }
 .p1{
     font-size: 22px;
@@ -320,7 +377,37 @@ h1{
     text-align: center;
     margin-bottom: 20px;
 }
+.caramel_gold{
+    color: #CDA274;
+}
+.caramel_gold_btn{
+    background-color: #CDA274;
+    color: #000000;
+}
 
+.caramel_gold_btn i{
+    color: #ffffff;
+}
+.white{
+    color: #FFFFFF;
+}
+
+.white_btn span{
+    color: #1F2022;
+}
+.white_btn i{
+    color: #1F2022;
+}
+.gray_btn{
+    background-color: #D3D3D3;
+}
+.gray_btn span{
+    color: #1F2022;
+}
+.gray_btn i{
+    color: #1F2022;
+    font-weight: 700;
+}
 .p2 {
     font-size: 22px;
     font-weight: 400;
@@ -2488,6 +2575,9 @@ main{
     .head_info{
         width: 70%;
     }
+    .head_info_right{
+        left: 15%;
+    }
     .p2,
     .p1 {
         font-size: 20px;
@@ -2770,6 +2860,15 @@ main{
 }
 
 @media (max-width: 800px) {
+    .head_info_center{
+        width: 440px;
+    }
+    .head_h2{
+        font-size: 50px;
+    }
+    .p1{
+        font-size: 18px !important;
+    }
     .pricing{
         flex-direction: column;
     }
@@ -3122,9 +3221,28 @@ main{
     .profesional_card_img{
         width: 50%;
     }
+    .head_info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .head_info .p1{
+        text-align: center;
+    }
+    .head_h2{
+        text-align: center;
+    }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) { 
+    .head_info_right{
+        left: 0% !important;
+        top: 50% !important;
+        transform: translate(15%, -50%);
+    }
+    .head_info_right p{
+        text-align: center;
+    }
     .pricing_box{
         width: 80%;
     }
@@ -3248,8 +3366,12 @@ main{
 
     .head_info {
         width: 95%;
-        top: 25%;
+        top: 50%;
         left: 5%;
+        transform: translate(0%, -50%);
+    }
+    .head_info .p1{
+        text-align: center;
     }
     .head_h2 {
         font-size: 56px;

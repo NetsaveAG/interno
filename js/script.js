@@ -1,3 +1,14 @@
+// AOS
+if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+    AOS.init({
+        duration: 1000,
+        easing: 'ease-out',
+        once: true,
+        mirror: false
+    });
+}
+
+
 function menuFlex() {
     var menu = document.querySelector('.flex_menu');
     var body = document.querySelector('body');
@@ -527,6 +538,9 @@ document.addEventListener('DOMContentLoaded', function() {
 function get_started() {
     window.location.href = 'project.html';
 }
+function kitchan(){
+    window.location.href = 'project.html?activeBtn=Kitchan';
+}
 function getEstimate(){
     window.location.href = 'contact-us.html';
 }
@@ -534,3 +548,6 @@ function ourBlog(){
     window.location.href = 'blog.html';
 
 }
+
+
+
